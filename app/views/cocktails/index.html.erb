@@ -1,14 +1,12 @@
 <h1>Cocktails</h1>
 
-<ul>
+<div class="cards">
   <% @cocktails.each do |cocktail| %>
-    <li>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cocktail.image_url %>)">
-          <a href="<%= cocktail_path(cocktail.id) %>"><%= cocktail.name %></a>
+          <a href="<%= cocktail_path(cocktail.id) %>" style="text-decoration: none"><%= cocktail.name %></a>
         </div>
-      </li>
   <% end %>
-</ul>
+</div>
 
-<%= link_to 'Add a Cocktail', new_cocktail_path %>
+<%= link_to 'Add a Cocktail', new_cocktail_path, style: 'color:black;'%>
 
